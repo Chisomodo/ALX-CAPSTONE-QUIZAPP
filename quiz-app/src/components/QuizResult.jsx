@@ -4,6 +4,11 @@ const QuizResult = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { score = 0, totalQuestions = 10 } = location.state || {};
+  
+  const prevHistory = JSON.parse(localStorage.getItem("quizHistory")) || [];
+const updatedHistory = [...prevHistory, { questions, answers, score }];
+localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
+
 
   const percentage = (score / totalQuestions) * 100;
 

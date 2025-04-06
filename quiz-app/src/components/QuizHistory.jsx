@@ -18,8 +18,8 @@ const QuizHistory = () => {
   };
 
   return (
-    <div className="bg-[#103778] min-h-screen p-6 text-white">
-      <h2 className="text-2xl font-bold mb-4">Quiz History</h2>
+    <div className="bg-[#103778] min-h-screen p-9 text-white">
+      <h2 className="text-6xl font-bold mb-4">Quiz History</h2>
 
       {history.length === 0 ? (
         <p>No quiz attempts yet.</p>

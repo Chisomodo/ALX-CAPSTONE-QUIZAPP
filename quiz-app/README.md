@@ -1,12 +1,34 @@
-# React + Vite
+#The Quiz App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a fun and interactive **Quiz App** built with **React**! Users can select quiz categories, answer multiple-choice questions, view their results, and even track their quiz history.
 
-Currently, two official plugins are available:
+##  Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Select quiz categories and number of questions
+- Take multiple-choice quizzes
+-  See results and feedback (pass/fail)
+-  Dynamic score percentage display
+-  Result images (trophy or failure)
+-  View quiz history (questions answered, correct/wrong)
+-  Retake quizzes
+-  Share results (coming soon)
 
-## Expanding the ESLint configuration
+##  Screenshots
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| Quiz Setup | Quiz Questions | Quiz Result |
+|------------|----------------|-------------|
+| ![Setup](./public/screens/setup.png) | ![Questions](./public/screens/questions.png) | ![Result](./public/screens/result.png) |
+
+## Tech Stack
+
+- React
+- React Router
+- Tailwind CSS
+- Vite (or Create React App)
+
+##  Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/your-repo.git
+   cd your-repo

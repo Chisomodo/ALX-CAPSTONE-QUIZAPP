@@ -92,7 +92,7 @@ const QuizSetup = () => {
         <button onClick={() => navigate("/Quizsetup")} className="text-orange-400">
           <Home size={24} />
         </button>
-        <button onClick={() => navigate("/history")} className="text-black">
+        <button onClick={() => navigate("/QuizHistory")} className="text-black">
           <History size={24} />
         </button>
         <button onClick={() => navigate("/profile")} className="text-black">
