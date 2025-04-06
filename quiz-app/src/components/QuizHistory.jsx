@@ -30,42 +30,32 @@ const QuizHistory = () => {
               <h3 className="font-semibold">Attempt #{i + 1}</h3>
               <p className="mb-2">Score: {attempt.score} / {attempt.questions.length}</p>
               <div className="space-y-2">
-                {attempt.questions.map((q, index) => {
-                  const isCorrect = attempt.answers[index] === q.correct;
-                  return (
-                    <div key={index} className="text-sm">
-                      <p dangerouslySetInnerHTML={{ __html: `Q${index + 1}: ${q.question}` }} />
-                      <p className={`ml-4 ${isCorrect ? "text-green-600" : "text-red-600"}`}>
-                        Your Answer: {attempt.answers[index]}
-                      </p>
-                      {!isCorrect && (
-                        <p className="ml-4 text-green-600">
-                          Correct Answer: {q.correct}
-                        </p>
-                      )}
-                    </div>
-                  );
-                })}
+                {attempt.questions.map((question, idx) => (
+                  <div key={idx} className="text-sm">
+                    <strong>{idx + 1}. </strong>
+                    <span dangerouslySetInnerHTML={{ __html: question.question }} />
+                    <p>Your Answer: {attempt.answers[idx]}</p>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
         </div>
       )}
 
-      <div className="mt-6 flex gap-4">
-        <button
-          onClick={handleClear}
-          className="bg-red-500 text-white px-4 py-2 rounded-md"
-        >
-          🗑 Clear History
-        </button>
-        <button
-          onClick={() => navigate("/quizsetup")}
-          className="bg-orange-500 px-4 py-2 rounded-md"
-        >
-          🔙 Back to Setup
-        </button>
-      </div>
+      <button
+        onClick={handleClear}
+        className="bg-red-500 text-white px-6 py-2 mt-8 rounded-md"
+      >
+        Clear History
+      </button>
+
+      <button
+        onClick={() => navigate("/quizsetup")}
+        className="bg-orange-500 text-white px-6 py-2 mt-4 rounded-md"
+      >
+        Go to Quiz Setup
+      </button>
     </div>
   );
 };

@@ -78,10 +78,15 @@ const QuizQuestion = () => {
       }
     });
 
+    // Save results to localStorage
+    const prevHistory = JSON.parse(localStorage.getItem("quizHistory")) || [];
+    const updatedHistory = [...prevHistory, { questions, answers, score }];
+    localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
+
     navigate("/QuizResult", {
       state: {
         score,
-        total: questions.length,
+        totalQuestions: questions.length,
       },
     });
   };

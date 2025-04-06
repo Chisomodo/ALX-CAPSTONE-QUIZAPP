@@ -3,19 +3,11 @@ import { useNavigate, useLocation } from "react-router-dom";
 const QuizResult = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const { score = 0, totalQuestions = 10 } = location.state || {};
-  
-  const prevHistory = JSON.parse(localStorage.getItem("quizHistory")) || [];
-const updatedHistory = [...prevHistory, { questions, answers, score }];
-localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
+  const { score = 0, total = 10 } = location.state || {};
 
+  const percentage = (score / total) * 100;
 
-  const percentage = (score / totalQuestions) * 100;
-
-  const resultImage =
-    percentage > 60
-      ? "/Trophy.jpg"
-      : "/Failure.jpg";
+  const resultImage = percentage > 60 ? "/Trophy.jpg" : "/Failure.jpg";
 
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-[#103778] text-white p-4">
@@ -28,7 +20,7 @@ localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
 
       {/* Score Display */}
       <div className="bg-blue-500 text-white px-4 py-2 rounded-md text-lg font-bold mt-2">
-        Your Score <br /> {score}/{totalQuestions}
+        Your Score <br /> {score}/{total}
       </div>
 
       {/* Result Image */}
@@ -54,7 +46,7 @@ localStorage.setItem("quizHistory", JSON.stringify(updatedHistory));
 
       {/* Close Button */}
       <button
-        onClick={() => navigate("/QuizSetup")}
+        onClick={() => navigate("/quizsetup")}
         className="text-white mt-6 text-3xl"
       >
         ❌
